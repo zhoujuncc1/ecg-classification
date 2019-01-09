@@ -1,23 +1,23 @@
-# this script convert the full dataset mitdb to .csv
+# this script convert the full dataset mitdb (data and annotatiosn) to text files
 
 from os import listdir, mkdir, system
 from os.path import isfile, isdir, join, exists
 
-dir = '/local/scratch/mondejar/dataset/mitdb/'
+dir = '/home/zhoujun/workspace/dataset/ECG/mitdb/'#'mitdb/'
 #Create folder
-csv = dir + 'csv'
-if not exists(csv):
-	mkdir(csv)
+dir_out = dir + 'csv/'
+if not exists(dir_out):
+	mkdir(dir_out)
 
 records = [f for f in listdir(dir) if isfile(join(dir, f)) if(f.find('.dat') != -1)]
 #print records
 
 for r in records:
 
-	command = 'rdsamp -r ' + r[:-4] + ' -c -H -f 0 -v >' + 'csv/' + r[:-4] + '.csv'
+	command = 'rdsamp -r ' + dir + r[:-4] + ' -c -H -f 0 -v >' + dir_out + r[:-4] + '.csv'
 	print(command)
 	system(command)
 
-	command_annotations = 'rdann -r ' + r[:-4] +' -f 0 -a atr -v >' + 'csv/' + r[:-4] + 'annotations.txt'
+	command_annotations = 'rdann -r ' + dir + r[:-4] +' -f 0 -a atr -v >' + dir_out + r[:-4] + '.ann'
 	print(command_annotations)
 	system(command_annotations)

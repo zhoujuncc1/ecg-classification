@@ -38,7 +38,7 @@ compute_HB_intervals = false;
 
 
 %% 0 read the dataset
-path_dataset = '/home/mondejar/dataset/ECG/';
+path_dataset = 'C:\Users\zhoujun\workspace\research\';
 dataset_name = 'mitdb';
 fs = 360;
 jump_lines = 1;

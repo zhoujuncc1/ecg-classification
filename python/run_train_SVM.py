@@ -50,7 +50,7 @@ for C_value in C_values:
     # Single
     use_RR = False
     norm_RR = False
-    compute_morph = {'u-lbp'} 
+    compute_morph = {''}
     main(multi_mode, 90, 90, do_preprocess, use_weight_class, maxRR, use_RR, norm_RR, compute_morph, oversamp_method, pca_k, feature_selection, do_cross_val, C_value, gamma_value, reduced_DS, leads_flag)
             
     """

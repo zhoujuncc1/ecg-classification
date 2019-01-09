@@ -158,7 +158,7 @@ def main(multi_mode='ovo', winL=90, winR=90, do_preprocess=True, use_weight_clas
     maxRR=True, use_RR=True, norm_RR=True, compute_morph={''}, oversamp_method = '', pca_k = '', feature_selection = '', do_cross_val = '', C_value = 0.001, gamma_value = 0.0, reduced_DS = False, leads_flag = [1,0]):
     print("Runing train_SVM.py!")
 
-    db_path = '/home/mondejar/dataset/ECG/mitdb/m_learning/scikit/'
+    db_path = '/home/zhoujun/workspace/research/mitdb/m_learning/'
     
     # Load train data 
     [tr_features, tr_labels, tr_patient_num_beats] = load_mit_db('DS1', winL, winR, do_preprocess,
