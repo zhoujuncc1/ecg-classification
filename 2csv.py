@@ -3,7 +3,7 @@
 from os import listdir, mkdir, system
 from os.path import isfile, isdir, join, exists
 
-dir = '/home/zhoujun/workspace/dataset/ECG/mitdb/'#'mitdb/'
+dir = './mitdb/'#'mitdb/'
 #Create folder
 dir_out = dir + 'csv/'
 if not exists(dir_out):

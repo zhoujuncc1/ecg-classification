@@ -1,6 +1,6 @@
 from train_SVM import *
 
-def main(multi_mode='ovo', winL=90, winR=90, do_preprocess=True, use_weight_class=True,
+def main(multi_mode='ovo', winL=65, winR=65, do_preprocess=True, use_weight_class=True,
          maxRR=True, use_RR=True, norm_RR=True, compute_morph={''}, oversamp_method='', pca_k='', feature_selection='',
          do_cross_val='', C_value=0.001, gamma_value=0.0, reduced_DS=False, leads_flag=[1, 0]):
     print("Runing train_SVM.py!")
@@ -35,6 +35,10 @@ def main(multi_mode='ovo', winL=90, winR=90, do_preprocess=True, use_weight_clas
     x_train = tr_features[indices].astype(np.float32)
     y_train = tr_labels[indices].astype(np.int64)
     np.savez('paper180.npz', x_train=x_train, y_train=y_train, x_test=eval_features.astype(np.float32), y_test=eval_labels.astype(np.int64))
+
+
+    np.savez('paper_train.npz', x_train=tr_features, y_train=tr_labels)
+    np.savez('paper_test.npz', x_test=eval_features, y_test=eval_labels)
 
 
 
